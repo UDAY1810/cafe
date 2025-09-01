@@ -42,6 +42,122 @@
 // }
 
 
+// "use client";
+
+// import { useState } from "react";
+
+// export default function ReservationPage() {
+//   const [form, setForm] = useState({
+//     name: "",
+//     email: "",
+//     phone: "",
+//     date: "",
+//     time: "",
+//     guests: 1,
+//   });
+
+//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     setForm({ ...form, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault();
+
+//     const res = await fetch("/api/reservation", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(form),
+//     });
+
+//     const data = await res.json();
+
+//     if (data.success) {
+//       alert("✅ Reservation confirmed!");
+//       setForm({
+//         name: "",
+//         email: "",
+//         phone: "",
+//         date: "",
+//         time: "",
+//         guests: 1,
+//       });
+//     } else {
+//       alert("❌ Something went wrong, please try again.");
+//     }
+//   };
+
+//   return (
+//     <section className="py-10">
+//       <h1 className="text-3xl font-bold mb-6">Make a Reservation</h1>
+//       <form
+//         onSubmit={handleSubmit}
+//         className="grid gap-4 max-w-lg bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow"
+//       >
+//         <input
+//           type="text"
+//           name="name"
+//           value={form.name}
+//           onChange={handleChange}
+//           placeholder="Name"
+//           required
+//           className="p-2 rounded border"
+//         />
+//         <input
+//           type="email"
+//           name="email"
+//           value={form.email}
+//           onChange={handleChange}
+//           placeholder="Email"
+//           required
+//           className="p-2 rounded border"
+//         />
+//         <input
+//           type="tel"
+//           name="phone"
+//           value={form.phone}
+//           onChange={handleChange}
+//           placeholder="Phone"
+//           required
+//           className="p-2 rounded border"
+//         />
+//         <input
+//           type="date"
+//           name="date"
+//           value={form.date}
+//           onChange={handleChange}
+//           required
+//           className="p-2 rounded border"
+//         />
+//         <input
+//           type="time"
+//           name="time"
+//           value={form.time}
+//           onChange={handleChange}
+//           required
+//           className="p-2 rounded border"
+//         />
+//         <input
+//           type="number"
+//           name="guests"
+//           value={form.guests}
+//           min="1"
+//           onChange={handleChange}
+//           placeholder="Guests"
+//           required
+//           className="p-2 rounded border"
+//         />
+
+//         <button
+//           type="submit"
+//           className="bg-black text-white py-2 px-4 rounded hover:bg-gray-700 transition"
+//         >
+//           Reserve
+//         </button>
+//       </form>
+//     </section>
+//   );
+// }
+
 "use client";
 
 import { useState } from "react";
@@ -56,33 +172,38 @@ export default function ReservationPage() {
     guests: 1,
   });
 
+  const [status, setStatus] = useState<{ success: boolean; message: string } | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus(null);
 
-    const res = await fetch("/api/reservation", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      alert("✅ Reservation confirmed!");
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        date: "",
-        time: "",
-        guests: 1,
+    try {
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
       });
-    } else {
-      alert("❌ Something went wrong, please try again.");
+
+      let data;
+      try {
+        data = await res.json(); // attempt parsing
+      } catch {
+        throw new Error("Server did not return JSON");
+      }
+
+      if (res.ok && data.success) {
+        setStatus({ success: true, message: "✅ Reservation confirmed!" });
+        setForm({ name: "", email: "", phone: "", date: "", time: "", guests: 1 });
+      } else {
+        setStatus({ success: false, message: data?.error || "❌ Something went wrong, please try again." });
+      }
+    } catch (err: any) {
+      setStatus({ success: false, message: err.message || "❌ Request failed." });
     }
   };
 
@@ -154,6 +275,17 @@ export default function ReservationPage() {
           Reserve
         </button>
       </form>
+
+      {status && (
+        <p
+          className={`mt-4 font-medium ${
+            status.success ? "text-green-600" : "text-red-600"
+          }`}
+        >
+          {status.message}
+        </p>
+      )}
     </section>
   );
 }
+

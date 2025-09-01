@@ -11,6 +11,7 @@ export default function Navbar() {
           <li><Link href="/reservation">Reservation</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
+           <li><Link href="/dashboard/reservations">Dashboard</Link></li>
         </ul>
       </div>
     </nav>
