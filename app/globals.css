@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 
 html {
@@ -11,19 +11,22 @@ html {
   --foreground: #171717;
 }
 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-/* Dark mode variables */
+
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0f0f0f;
     --foreground: #ededed;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -32,9 +35,182 @@ html {
 }
 
 
-/* Base body styling */
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* 
+@import "tailwindcss";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; 
+    --foreground: #ededed;
+  }
+}
+
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+@import "tailwindcss";
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light Mode Colors */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --accent: #fbbf24; /* Cafe Yellow */
+  --accent-dark: #d97706; /* Darker Yellow */
+  --muted: #6b7280;
+}
+
+/* Tailwind theme extension */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --font-sans: "Poppins", "Inter", "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f5f5f5;
+    --accent: #facc15; /* brighter yellow */
+    --accent-dark: #ca8a04;
+    --muted: #9ca3af;
+  }
+}
+
+/* Reset Base Styling */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* 🌟 Navbar Styling */
+nav {
+  background: rgba(0, 0, 0, 0.3); /* Transparent glass effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.4s ease-in-out;
+}
+
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.85); /* Dark after scroll */
+}
+
+/* 🌟 Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+/* 🌟 Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* 🌟 Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background: var(--foreground);
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌟 Card Styling (Menu/Highlights) */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 Footer */
+footer {
+  background: #111;
+  color: var(--muted);
+  padding: 2rem;
+  text-align: center;
 }

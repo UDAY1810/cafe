@@ -223,6 +223,227 @@
 // }
 
 
+// "use client";
+// import { motion } from "framer-motion";
+
+// export default function HomePage() {
+//   return (
+//     <main>
+//       {/* Hero Section */}
+//       <section className="relative h-screen overflow-hidden">
+//         {/* Animated Background */}
+//         <motion.div
+//           initial={{ opacity: 0, scale: 1.2 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 2, ease: "easeOut" }}
+//           className="relative h-screen bg-cover bg-center"
+//           style={{ backgroundImage: "url('/images/bg1.jpeg')" }}
+//         />
+
+//         {/* Dark Overlay */}
+//         <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-center text-white">
+//           <div>
+//             {/* Title */}
+//             <motion.h1
+//               initial={{ opacity: 0, y: -60 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: false, amount: 0.6 }}
+//               transition={{ duration: 1 }}
+//               className="text-5xl md:text-6xl font-bold mb-4"
+//             >
+//               Welcome to Hunger Lane Cafe
+//             </motion.h1>
+
+//             {/* Subtitle */}
+//             <motion.p
+//               initial={{ opacity: 0, y: 40 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: false, amount: 0.6 }}
+//               transition={{ duration: 1, delay: 0.3 }}
+//               className="text-lg md:text-xl mb-6"
+//             >
+//               Good food, great ambience – your perfect hangout spot.
+//             </motion.p>
+
+//             {/* Buttons */}
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               whileInView={{ opacity: 1 }}
+//               viewport={{ once: false, amount: 0.6 }}
+//               transition={{ duration: 1, delay: 0.6 }}
+//               className="space-x-4"
+//             >
+//               <a
+//                 href="/menu"
+//                 className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition"
+//               >
+//                 🍴 Explore Menu
+//               </a>
+//               <a
+//                 href="/reservation"
+//                 className="bg-white hover:bg-gray-200 text-black px-6 py-3 rounded-lg font-semibold transition"
+//               >
+//                 📅 Book a Table
+//               </a>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Highlights Section */}
+//       <section className="py-16 px-6 text-center bg-gray-100 dark:bg-gray-900">
+//         <h2 className="text-3xl font-bold mb-10">Why Choose Us?</h2>
+//         <div className="grid gap-6 md:grid-cols-3">
+//           {[
+//             {
+//               img: "/images/food.jpeg",
+//               title: "Delicious Food",
+//               desc: "Freshly prepared dishes with authentic taste.",
+//             },
+//             {
+//               img: "/images/bg3.jpeg",
+//               title: "Cozy Ambience",
+//               desc: "Perfect place to chill with friends & family.",
+//             },
+//             {
+//               img: "/images/bg.jpeg",
+//               title: "Great Service",
+//               desc: "Quick and friendly staff always at your service.",
+//             },
+//           ].map((item, i) => (
+//             <motion.div
+//               key={i}
+//               initial={{ opacity: 0, y: 50 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: false, amount: 0.4 }}
+//               transition={{ duration: 0.8, delay: i * 0.3 }}
+//               className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition"
+//             >
+//               <img
+//                 src={item.img}
+//                 className="h-40 w-full object-cover rounded mb-4"
+//                 alt={item.title}
+//               />
+//               <h3 className="text-xl font-semibold">{item.title}</h3>
+//               <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </section>
+//     </main>
+//   );
+// }
+//  ---------------------------- 1st ui for the website ----------------------------
+// "use client";
+// import { motion } from "framer-motion";
+
+// export default function HomePage() {
+//   return (
+//     <main>
+//       {/* Hero Section */}
+//       <section className="relative h-screen overflow-hidden">
+//         {/* Animated Background */}
+//         <motion.div
+//           initial={{ opacity: 0, scale: 1.2 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 2, ease: "easeOut" }}
+//           className="absolute inset-0 bg-cover bg-center"
+//           style={{ backgroundImage: "url('/images/bg1.jpeg')" }}
+//         />
+
+//         {/* Dark Overlay */}
+//         <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-center text-white">
+//           <div>
+//             {/* Title */}
+//             <motion.h1
+//               initial={{ opacity: 0, y: -60 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: false, amount: 0.6 }}
+//               transition={{ duration: 1 }}
+//               className="text-5xl md:text-6xl font-bold mb-4"
+//             >
+//               Welcome to Hunger Lane Cafe
+//             </motion.h1>
+
+//             {/* Subtitle */}
+//             <motion.p
+//               initial={{ opacity: 0, y: 40 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: false, amount: 0.6 }}
+//               transition={{ duration: 1, delay: 0.3 }}
+//               className="text-lg md:text-xl mb-6"
+//             >
+//               Good food, great ambience – your perfect hangout spot.
+//             </motion.p>
+
+//             {/* Buttons */}
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               whileInView={{ opacity: 1 }}
+//               viewport={{ once: false, amount: 0.6 }}
+//               transition={{ duration: 1, delay: 0.6 }}
+//               className="space-x-4"
+//             >
+//               <a href="/menu" className="btn-primary">
+//                 🍴 Explore Menu
+//               </a>
+//               <a href="/reservation" className="btn-secondary">
+//                 📅 Book a Table
+//               </a>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Highlights Section */}
+//       <section className="py-16 px-6 text-center bg-gray-100 dark:bg-gray-900">
+//         <h2 className="text-3xl font-bold mb-10">Why Choose Us?</h2>
+//         <div className="grid gap-6 md:grid-cols-3">
+//           {[
+//             {
+//               img: "/images/food.jpeg",
+//               title: "Delicious Food",
+//               desc: "Freshly prepared dishes with authentic taste.",
+//             },
+//             {
+//               img: "/images/bg3.jpeg",
+//               title: "Cozy Ambience",
+//               desc: "Perfect place to chill with friends & family.",
+//             },
+//             {
+//               img: "/images/bg.jpeg",
+//               title: "Great Service",
+//               desc: "Quick and friendly staff always at your service.",
+//             },
+//           ].map((item, i) => (
+//             <motion.div
+//               key={i}
+//               initial={{ opacity: 0, y: 50 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: false, amount: 0.4 }}
+//               transition={{ duration: 0.8, delay: i * 0.3 }}
+//               className="card"
+//             >
+//               <img
+//                 src={item.img}
+//                 className="h-40 w-full object-cover rounded mb-4"
+//                 alt={item.title}
+//               />
+//               <h3 className="text-xl font-semibold">{item.title}</h3>
+//               <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </section>
+//     </main>
+//   );
+// }
+
+
+
+
+// ------------------------------diffrent ui for the website------------------------------
+
 "use client";
 import { motion } from "framer-motion";
 
@@ -230,107 +451,82 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Animated Background */}
+      <section className="relative h-screen flex flex-col md:flex-row items-center justify-between px-10 bg-gradient-to-r from-black via-gray-900 to-black text-white">
+        {/* Left Text */}
         <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="z-10 max-w-xl"
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Experience <span className="text-yellow-400">Hunger Lane Cafe</span>
+          </h1>
+          <p className="text-lg text-gray-300 mb-6">
+            Serving freshly brewed coffee, delicious snacks, and the best ambience in town.
+          </p>
+          <div className="space-x-4">
+            <a href="/menu" className="btn-primary">🍴 Explore Menu</a>
+            <a href="/reservation" className="btn-secondary">📅 Book a Table</a>
+          </div>
+        </motion.div>
+
+        {/* Right Image */}
+        <motion.img
+          src="/images/bg1.jpeg"
+          alt="Cafe Food"
           initial={{ opacity: 0, scale: 1.2 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bg1.jpeg')" }}
+          transition={{ duration: 1.5 }}
+          className="w-full md:w-1/2 rounded-2xl shadow-lg"
         />
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-center text-white z-10">
-          <div>
-            {/* Title */}
-            <motion.h1
-              initial={{ opacity: 0, y: -60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
-              transition={{ duration: 1 }}
-              className="text-5xl md:text-6xl font-bold mb-4"
-            >
-              Welcome to Hunger Lane Cafe
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="text-lg md:text-xl mb-6"
-            >
-              Good food, great ambience – your perfect hangout spot.
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: false, amount: 0.6 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="space-x-4"
-            >
-              <a
-                href="/menu"
-                className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition"
-              >
-                🍴 Explore Menu
-              </a>
-              <a
-                href="/reservation"
-                className="bg-white hover:bg-gray-200 text-black px-6 py-3 rounded-lg font-semibold transition"
-              >
-                📅 Book a Table
-              </a>
-            </motion.div>
-          </div>
-        </div>
       </section>
+      {/* Features Section */}
+<section className="py-16 bg-gray-100 dark:bg-gray-900 text-center">
+  <h2 className="text-3xl font-bold mb-12">Why Choose Us?</h2>
+  <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+    {[
+      { icon: "☕", title: "Fresh Coffee", desc: "Brewed from the finest beans." },
+      { icon: "🍔", title: "Delicious Food", desc: "Snacks and meals you’ll love." },
+      { icon: "🎶", title: "Cozy Ambience", desc: "Relax with music and vibes." },
+    ].map((f, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: i * 0.2 }}
+        className="card cursor-pointer hover:scale-105 hover:shadow-2xl hover:border hover:border-yellow-400 transition-transform duration-300"
+      >
+        {/* Icon with bounce on hover */}
+        <motion.div
+          whileHover={{ y: -8 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="text-4xl mb-4"
+        >
+          {f.icon}
+        </motion.div>
 
-      {/* Highlights Section */}
-      <section className="py-16 px-6 text-center bg-gray-100 dark:bg-gray-900">
-        <h2 className="text-3xl font-bold mb-10">Why Choose Us?</h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              img: "/images/food.jpeg",
-              title: "Delicious Food",
-              desc: "Freshly prepared dishes with authentic taste.",
-            },
-            {
-              img: "/images/bg3.jpeg",
-              title: "Cozy Ambience",
-              desc: "Perfect place to chill with friends & family.",
-            },
-            {
-              img: "/images/bg.jpeg",
-              title: "Great Service",
-              desc: "Quick and friendly staff always at your service.",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.4 }}
-              transition={{ duration: 0.8, delay: i * 0.3 }}
-              className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition"
-            >
-              <img
-                src={item.img}
-                className="h-40 w-full object-cover rounded mb-4"
-                alt={item.title}
-              />
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+        <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
+        <p className="text-gray-600 dark:text-gray-300">{f.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-black text-center text-white">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="text-4xl font-bold mb-6"
+        >
+          Ready to Taste Happiness?
+        </motion.h2>
+        <a href="/reservation" className="btn-primary">
+          Reserve Your Table Now
+        </a>
       </section>
     </main>
   );
 }
-
