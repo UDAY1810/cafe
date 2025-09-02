@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,                // ✅ better to keep strict
+    "strict": true, // ✅ better to keep strict
     "noEmit": true,
     "incremental": true,
     "module": "esnext",
@@ -13,9 +17,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",                // ✅ alias base
-    "paths": {                     // ✅ alias paths
-      "@/*": ["./*"]
+    "baseUrl": ".", // ✅ alias base
+    "paths": { // ✅ alias paths
+      "@/*": [
+        "./*"
+      ]
     },
     "plugins": [
       {
@@ -24,9 +30,13 @@
     ]
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }
