@@ -481,6 +481,44 @@ export default function HomePage() {
           className="w-full md:w-1/2 rounded-2xl shadow-lg"
         />
       </section>
+
+       {/* Available on Swiggy & Zomato */}
+      <section className="py-8 bg-gray-100 dark:bg-gray-900 text-center">
+        <h2 className="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
+          Also available on
+        </h2>
+        <div className="flex justify-center gap-8">
+          <a
+            href="https://www.swiggy.com/restaurants" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/images/swiggy.png" 
+              alt="Swiggy"
+              className="h-12 hover:scale-110 transition-transform"
+            />
+          </a>
+          <a
+            href="https://www.zomato.com/" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/images/zomato.png"
+              alt="Zomato"
+              className="h-12 hover:scale-110 transition-transform"
+            />
+          </a>
+        </div>
+      </section>
+
+
+
+
+
+
+
       {/* Features Section */}
 <section className="py-16 bg-gray-100 dark:bg-gray-900 text-center">
   <h2 className="text-3xl font-bold mb-12">Why Choose Us?</h2>

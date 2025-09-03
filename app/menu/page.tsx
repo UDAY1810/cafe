@@ -108,3 +108,89 @@ export default function MenuPage() {
     </section>
   );
 }
+
+
+// "use client";
+// import { useEffect, useState } from "react";
+// import { motion } from "framer-motion";
+
+// export default function MenuPage() {
+//   const [items, setItems] = useState<any[]>([]);
+
+//   useEffect(() => {
+//     fetch("/api/menu")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         if (data.success && Array.isArray(data.menu)) {
+//           setItems(data.menu);
+//         } else {
+//           setItems([]);
+//         }
+//       });
+//   }, []);
+
+//   return (
+//     <section className="min-h-screen py-16 px-6 bg-gradient-to-br from-yellow-50 via-white to-yellow-100 dark:from-gray-900 dark:to-black">
+//       <div className="max-w-7xl mx-auto text-center mb-12">
+//         <h1 className="text-4xl font-extrabold text-yellow-600 dark:text-yellow-400 mb-4">
+//           🍴 Our Menu
+//         </h1>
+//         <p className="text-gray-600 dark:text-gray-300 text-lg">
+//           Explore our freshly brewed coffees, delicious snacks, and more.
+//         </p>
+//       </div>
+
+//       <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl mx-auto">
+//         {items.length > 0 ? (
+//           items.map((item, i) => (
+//             <motion.div
+//               key={i}
+//               initial={{ opacity: 0, y: 40 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6, delay: i * 0.1 }}
+//               className="bg-white/30 dark:bg-gray-800/50 backdrop-blur-lg border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform"
+//             >
+//               {/* Image */}
+//               <div className="relative w-full h-48 overflow-hidden">
+//                 <img
+//                   src={item.image}
+//                   alt={item.name}
+//                   className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+//                 />
+//                 <span className="absolute top-3 right-3 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow">
+//                   {item.category}
+//                 </span>
+//               </div>
+
+//               {/* Content */}
+//               <div className="p-5 text-center">
+//                 <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+//                   {item.name}
+//                 </h3>
+//                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+//                   {item.description || "Delicious and freshly made."}
+//                 </p>
+//                 <div className="flex justify-center gap-4">
+//                   {item.priceHalf && (
+//                     <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-lg text-sm text-gray-700 dark:text-gray-200">
+//                       Half: ₹{item.priceHalf}
+//                     </span>
+//                   )}
+//                   {item.priceFull && (
+//                     <span className="bg-yellow-500 px-3 py-1 rounded-lg text-sm font-semibold text-black">
+//                       Full: ₹{item.priceFull}
+//                     </span>
+//                   )}
+//                 </div>
+//               </div>
+//             </motion.div>
+//           ))
+//         ) : (
+//           <p className="text-center text-gray-500 col-span-full">
+//             🍽 No menu items found.
+//           </p>
+//         )}
+//       </div>
+//     </section>
+//   );
+// }

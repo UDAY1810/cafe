@@ -8,6 +8,7 @@ const ReservationSchema = new Schema(
     date: { type: String, required: true },
     time: { type: String, required: true },
     guests: { type: Number, required: true },
+    revenue: { type: Number, default: 0 },
   },
   { timestamps: true }
 );
