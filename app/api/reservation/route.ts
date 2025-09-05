@@ -54,17 +54,28 @@ export async function POST(req: Request) {
 /**
  * Get all reservations
  */
-export async function GET() {
-  try {
-    await connectDB();
-    const reservations = await Reservation.find().sort({ createdAt: -1 });
+// export async function GET() {
+//   try {
+//     await connectDB();
+//     const reservations = await Reservation.find().sort({ createdAt: -1 });
 
-    return NextResponse.json({ success: true, reservations }, { status: 200 });
-  } catch (error: any) {
-    console.error("❌ Error fetching reservations:", error.message);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
-  }
+//     return NextResponse.json({ success: true, reservations }, { status: 200 });
+//   } catch (error: any) {
+//     console.error("❌ Error fetching reservations:", error.message);
+//     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+//   }
+// }
+
+export async function GET(req: Request) {
+  await connectDB();
+  const url = new URL(req.url);
+  const email = url.searchParams.get("email");
+  const query: any = {};
+  if (email) query.email = email;
+  const reservations = await Reservation.find(query).sort({ createdAt: -1 });
+  return NextResponse.json({ success: true, reservations });
 }
+
 
 /**
  * Delete reservation
