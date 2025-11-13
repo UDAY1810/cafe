@@ -584,7 +584,7 @@
 // }
 
 
-//  ab isme data anyalctics aur live kisne table book kri hai wo bhi deikhega // aur yeh main hai mongodb k saath connect hoga livd
+// //  ab isme data anyalctics aur live kisne table book kri hai wo bhi deikhega // aur yeh main hai mongodb k saath connect hoga livd
 // "use client";
 // import { useEffect, useState } from "react";
 // import { motion } from "framer-motion";
